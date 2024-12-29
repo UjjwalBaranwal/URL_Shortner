@@ -6,7 +6,7 @@ const urlSchema = new mongoose.Schema({
     unique: [true, "id should be unique"],
   },
   shortURL: {
-    type: Number,
+    type: String,
     required: [true, "shortURL is required"],
   },
   longURL: {

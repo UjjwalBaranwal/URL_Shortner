@@ -1,6 +1,6 @@
 const morgan = require("morgan");
 const express = require("express");
-const { shortURL } = require("./urlController");
+const { shortURL, longURL } = require("./urlController");
 const app = express();
 
 if (process.env.NODE_ENV === "dev") {
@@ -30,10 +30,6 @@ app.get("/", (req, res) => {
   });
 });
 app.post("/", shortURL);
-app.get("/:id", (req, res) => {
-  const { id } = req.params;
-  console.log(id);
-  res.status(200).redirect("https://www.google.com");
-});
+app.get("/:id", longURL);
 
 module.exports = app;
