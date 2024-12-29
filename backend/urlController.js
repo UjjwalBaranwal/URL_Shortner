@@ -37,7 +37,8 @@ exports.longURL = catchasync(async (req, res, next) => {
   if (!data) {
     return res.status(404).json({
       status: "error",
-      message: "URL not found",
+      message:
+        "Requested shortURL is not generated or deleted from our service",
     });
   }
   const currentLongURL = data.longURL;
